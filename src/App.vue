@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <p>Logo</p>
-    <p><span>Home</span> <span>About Us</span></p>
+    <nav>
+      <p>Logo</p>
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+      </ul>
+    </nav>
     <h1>Items Management Page</h1>
 
     <div class="dataIn">
@@ -23,10 +28,12 @@
         </li>
       </ul>
     </div>
-    <div>
+
+    <div class="buttons">
       <button>➡️</button>
       <button>⬅️</button>
     </div>
+
     <div class="dataOut">
       <h1>Selected Items</h1>
       <ul>
@@ -121,8 +128,21 @@ ul {
   list-style-type: none;
 }
 
+.buttons {
+  display: inline-block;
+  width: 10%;
+}
+
 .dataIn,
 .dataOut {
-  width: 50%;
+  width: 40%;
+  display: inline-block;
+}
+
+.dataIn > ul,
+.dataOut > ul {
+  border: 2px solid black;
+  height: 150px;
+  overflow-y: scroll;
 }
 </style>
