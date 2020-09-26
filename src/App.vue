@@ -91,7 +91,10 @@ export default {
       return await response.json();
     },
     addToListIn() {
-      if (this.listIn.includes(this.listMember)) {
+      if (
+        this.listIn.includes(this.listMember) ||
+        this.listOut.includes(this.listMember)
+      ) {
         this.status = "The item already exists";
       } else {
         this.listIn.push(this.listMember);
