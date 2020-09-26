@@ -98,6 +98,7 @@ export default {
         this.status = "The item already exists";
       } else {
         this.listIn.push(this.listMember);
+        this.persistItems();
         this.status = "";
       }
       this.listMember = "";
@@ -180,6 +181,13 @@ nav > p {
 .buttons {
   display: inline-block;
   width: 10%;
+  position: relative;
+  top: -85px;
+  left: 28px;
+}
+
+.buttons > button {
+  display: block;
 }
 
 .dataIn,
