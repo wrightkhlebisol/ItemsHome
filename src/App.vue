@@ -3,8 +3,8 @@
     <nav>
       <p>Logo</p>
       <ul>
-        <li>Home</li>
-        <li>About Us</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
       </ul>
     </nav>
     <h1>Items Management Page</h1>
@@ -48,7 +48,12 @@
     </div>
 
     <hr />
-    <p><span>Home</span> <span>About Us</span></p>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -123,9 +128,39 @@ export default {
   width: 900px;
 }
 
+form {
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+form > input {
+  height: 30px;
+  width: 80%;
+  margin-right: 10px;
+}
+
+form > button {
+  height: 36px;
+  width: 15%;
+}
+
 ul {
   text-decoration: none;
   list-style-type: none;
+}
+
+nav > ul,
+nav > ul > li {
+  display: inline-block;
+  padding-right: 30px;
+}
+
+nav > ul {
+  float: right;
+}
+
+nav > p {
+  display: inline-block;
 }
 
 .buttons {
@@ -144,5 +179,6 @@ ul {
   border: 2px solid black;
   height: 150px;
   overflow-y: scroll;
+  padding: 10px;
 }
 </style>
