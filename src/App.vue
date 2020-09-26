@@ -10,6 +10,7 @@
     <h1>Items Management Page</h1>
 
     <div class="dataIn">
+      <p v-text="status" class="status"></p>
       <form @submit.prevent="addToListIn">
         <input
           type="text"
@@ -64,6 +65,7 @@ export default {
     return {
       listMember: "",
       selectedMember: 0,
+      status: "",
       listIn: [],
       listOut: [],
       dataUrl: "https://items-manager-api.herokuapp.com/",
@@ -89,7 +91,12 @@ export default {
       return await response.json();
     },
     addToListIn() {
-      this.listIn.push(this.listMember);
+      if (this.listIn.includes(this.listMember)) {
+        this.status = "The item already exists";
+      } else {
+        this.listIn.push(this.listMember);
+        this.status = "";
+      }
       this.listMember = "";
     },
     persistItems() {
@@ -126,6 +133,10 @@ export default {
   text-align: left;
   margin: auto;
   width: 900px;
+}
+
+.status {
+  color: rgb(255, 0, 106);
 }
 
 form {
